@@ -83,14 +83,14 @@ Task 6) Calculate and return the lowest temperature of the month.
 
 // Note: Use appropriate JavaScript array iteration methods such as filter, map, reduce, etc., to achieve the desired output for each task.
 
-const maxTemperature = temperatures.reduce(
-  (max, temperature) => Math.max(max, temperature),
-  -Infinity
-);
+const maxTemperature = temperatures.reduce((max, temperature) => {
+  if (max >= temperature) return max;
+  return temperature;
+}, -Infinity);
 console.log(maxTemperature);
 
-const minTemperature = temperatures.reduce(
-  (min, temperature) => Math.min(min, temperature),
-  Infinity
-);
+const minTemperature = temperatures.reduce((min, temperature) => {
+  if (min < temperature) return min;
+  return temperature;
+}, Infinity);
 console.log(minTemperature);
